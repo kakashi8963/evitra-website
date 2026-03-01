@@ -56,8 +56,8 @@ const services = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-stone-50 text-stone-900">
-      <header className="border-b border-stone-200 bg-stone-50/90 backdrop-blur">
+    <div className="min-h-screen bg-gradient-to-b from-stone-50 via-amber-50/40 to-sky-50/40 text-stone-900">
+      <header className="sticky top-0 z-40 border-b border-stone-200/80 bg-stone-50/85 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
           <div className="flex items-center gap-3">
             <Image
@@ -65,25 +65,25 @@ export default function Home() {
               alt="Evitra Digital logo"
               width={36}
               height={36}
-              className="h-9 w-9 rounded-md object-cover"
+              className="h-9 w-9 rounded-md object-cover ring-1 ring-stone-200"
               priority
             />
             <p className="text-base font-semibold tracking-tight">Evitra Digital</p>
           </div>
           <nav className="hidden items-center gap-6 md:flex">
-            <a href="#services" className="text-sm font-medium text-stone-600 transition hover:text-stone-900">Services</a>
-            <a href="#process" className="text-sm font-medium text-stone-600 transition hover:text-stone-900">Process</a>
-            <a href="#testimonials" className="text-sm font-medium text-stone-600 transition hover:text-stone-900">Success Stories</a>
+            <a href="#services" className="text-sm font-medium text-stone-600 transition hover:text-indigo-700">Services</a>
+            <a href="#process" className="text-sm font-medium text-stone-600 transition hover:text-indigo-700">Process</a>
+            <a href="#testimonials" className="text-sm font-medium text-stone-600 transition hover:text-indigo-700">Success Stories</a>
             <a
               href="#contact"
-              className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium transition hover:bg-stone-100"
+              className="rounded-full border border-stone-300 bg-white/80 px-4 py-2 text-sm font-medium transition hover:-translate-y-0.5 hover:bg-stone-100"
             >
               Book a Call
             </a>
           </nav>
           <a
             href="#contact"
-            className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium transition hover:bg-stone-100 md:hidden"
+            className="rounded-full border border-stone-300 bg-white/80 px-4 py-2 text-sm font-medium transition hover:bg-stone-100 md:hidden"
           >
             Book a Call
           </a>
@@ -91,13 +91,15 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="mx-auto grid w-full max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-28">
-          <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-stone-600">
+        <section className="relative mx-auto grid w-full max-w-6xl gap-12 overflow-hidden px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-28">
+          <div className="hero-orb -right-20 -top-24 hidden sm:block" />
+          <div className="hero-orb -left-16 bottom-0 hidden bg-amber-200/45 sm:block" />
+          <div className="relative z-10 animate-fade-up">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-indigo-700">
               Digital Growth Partner
             </p>
             <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-stone-950 sm:text-5xl lg:text-6xl">
-              Build, rank, and scale your business online.
+              Build, rank, and <span className="gradient-text">scale your business online.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-stone-700">
               Evitra Digital helps brands grow with websites, SEO, content, and
@@ -106,20 +108,20 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#services"
-                className="rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-stone-700"
+                className="pulse-glow rounded-full bg-gradient-to-r from-indigo-700 to-sky-600 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:from-indigo-600 hover:to-sky-500"
               >
                 Explore Services
               </a>
               <a
                 href="#contact"
-                className="rounded-full border border-stone-300 px-6 py-3 text-sm font-semibold transition hover:bg-stone-100"
+                className="rounded-full border border-stone-300 bg-white/80 px-6 py-3 text-sm font-semibold transition hover:-translate-y-0.5 hover:bg-stone-100"
               >
                 Start a Project
               </a>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-stone-200 bg-white p-8 shadow-sm">
+          <div className="card-lift relative z-10 rounded-2xl border border-stone-200/90 bg-white/90 p-8 shadow-sm animate-fade-up-delayed">
             <h2 className="text-lg font-semibold tracking-tight">Why Evitra</h2>
             <ul className="mt-6 space-y-5 text-stone-700">
               <li>Strategy-first execution focused on business KPIs.</li>
@@ -143,7 +145,7 @@ export default function Home() {
             {services.map((service) => (
               <article
                 key={service.title}
-                className="rounded-2xl border border-stone-200 bg-white p-6"
+                className="card-lift rounded-2xl border border-stone-200 bg-white/90 p-6"
               >
                 <h3 className="text-xl font-semibold tracking-tight text-stone-900">
                   {service.title}
@@ -155,7 +157,7 @@ export default function Home() {
         </section>
 
         <section id="process" className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
-          <div className="rounded-3xl border border-stone-200 bg-white p-8 sm:p-10">
+          <div className="rounded-3xl border border-indigo-100 bg-gradient-to-br from-white to-indigo-50/50 p-8 sm:p-10">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               Simple process, serious results
             </h2>
@@ -181,7 +183,7 @@ export default function Home() {
 
         <section id="testimonials" className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
           <div className="max-w-2xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-stone-600">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-indigo-700">
               Customer Success Stories
             </p>
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -195,7 +197,7 @@ export default function Home() {
             {testimonials.map((t) => (
               <blockquote
                 key={t.name}
-                className="flex flex-col justify-between rounded-2xl border border-stone-200 bg-white p-6"
+                className="card-lift flex flex-col justify-between rounded-2xl border border-stone-200 bg-white/95 p-6"
               >
                 <p className="leading-7 text-stone-700">&ldquo;{t.quote}&rdquo;</p>
                 <footer className="mt-5 flex items-center justify-between">
@@ -218,7 +220,7 @@ export default function Home() {
         </section>
 
         <section id="contact" className="mx-auto w-full max-w-6xl px-6 pb-24 lg:px-8">
-          <div className="rounded-3xl bg-stone-900 px-8 py-12 text-white sm:px-10">
+          <div className="rounded-3xl bg-gradient-to-r from-stone-900 via-indigo-900 to-sky-900 px-8 py-12 text-white sm:px-10">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               Ready to grow with Evitra Digital?
             </h2>
@@ -228,13 +230,13 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="mailto:digital.evitra@gmail.com"
-                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-900 transition hover:bg-stone-200"
+                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-900 transition hover:-translate-y-0.5 hover:bg-stone-200"
               >
                 digital.evitra@gmail.com
               </a>
               <a
                 href="tel:+919999999999"
-                className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold transition hover:bg-white/10"
+                className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold transition hover:-translate-y-0.5 hover:bg-white/10"
               >
                 +91 99999 99999
               </a>
