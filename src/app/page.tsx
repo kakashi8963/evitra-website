@@ -159,7 +159,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="card-lift relative z-10 rounded-2xl border border-stone-200/90 bg-stone-100/85 p-8 shadow-sm animate-fade-up-delayed">
+          <div className="card-lift relative z-10 rounded-2xl border border-stone-200/90 bg-stone-200/70 p-8 shadow-sm animate-fade-up-delayed">
             <h2 className="text-lg font-semibold tracking-tight">Why Evitra</h2>
             <ul className="mt-6 space-y-5 text-stone-700">
               <li>Strategy-first execution focused on business KPIs.</li>
@@ -183,7 +183,7 @@ export default function Home() {
             {impactStats.map((stat, index) => (
               <article
                 key={stat.label}
-                className="card-lift stagger-item rounded-2xl border border-indigo-100 bg-indigo-50/70 p-6"
+                className="card-lift stagger-item rounded-2xl border border-indigo-200/80 bg-indigo-100/75 p-6"
                 style={{ animationDelay: `${index * 90}ms` }}
               >
                 <p className="text-3xl font-semibold tracking-tight text-indigo-700">{stat.value}</p>
@@ -206,7 +206,7 @@ export default function Home() {
             {services.map((service, index) => (
               <article
                 key={service.title}
-                className="card-lift stagger-item rounded-2xl border border-stone-200 bg-amber-50/75 p-6"
+                className="card-lift stagger-item rounded-2xl border border-amber-200/80 bg-amber-100/70 p-6"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <h3 className="text-xl font-semibold tracking-tight text-stone-900">
@@ -224,17 +224,17 @@ export default function Home() {
               Simple process, serious results
             </h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
-              <div className="card-lift rounded-2xl border border-transparent p-4 transition hover:border-indigo-100 hover:bg-indigo-50/70">
+              <div className="card-lift rounded-2xl border border-transparent p-4 transition hover:border-indigo-200 hover:bg-indigo-100/75">
                 <p className="text-sm font-semibold text-stone-500">Step 01</p>
                 <p className="mt-2 text-lg font-semibold">Audit & Strategy</p>
                 <p className="mt-2 text-stone-700">We map your goals, funnel, and opportunities.</p>
               </div>
-              <div className="card-lift rounded-2xl border border-transparent p-4 transition hover:border-indigo-100 hover:bg-indigo-50/70">
+              <div className="card-lift rounded-2xl border border-transparent p-4 transition hover:border-indigo-200 hover:bg-indigo-100/75">
                 <p className="text-sm font-semibold text-stone-500">Step 02</p>
                 <p className="mt-2 text-lg font-semibold">Build & Launch</p>
                 <p className="mt-2 text-stone-700">Execution across web, SEO, content, and ads.</p>
               </div>
-              <div className="card-lift rounded-2xl border border-transparent p-4 transition hover:border-indigo-100 hover:bg-indigo-50/70">
+              <div className="card-lift rounded-2xl border border-transparent p-4 transition hover:border-indigo-200 hover:bg-indigo-100/75">
                 <p className="text-sm font-semibold text-stone-500">Step 03</p>
                 <p className="mt-2 text-lg font-semibold">Optimize & Scale</p>
                 <p className="mt-2 text-stone-700">Continuous improvement backed by real data.</p>
@@ -259,7 +259,7 @@ export default function Home() {
             {testimonials.map((t, index) => (
               <blockquote
                 key={t.name}
-                className="card-lift stagger-item flex flex-col justify-between rounded-2xl border border-stone-200 bg-sky-50/75 p-6"
+                className="card-lift stagger-item flex flex-col justify-between rounded-2xl border border-sky-200/80 bg-sky-100/70 p-6"
                 style={{ animationDelay: `${index * 120}ms` }}
               >
                 <p className="leading-7 text-stone-700">&ldquo;{t.quote}&rdquo;</p>
@@ -283,7 +283,7 @@ export default function Home() {
         </section>
 
         <section className="section-reveal mx-auto w-full max-w-6xl px-6 py-6 lg:px-8 lg:py-10">
-          <div className="rounded-3xl border border-stone-200 bg-stone-100/85 p-8 sm:p-10">
+          <div className="rounded-3xl border border-stone-300/80 bg-stone-200/70 p-8 sm:p-10">
             <div className="max-w-2xl">
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-indigo-700">
                 Frequently Asked Questions
@@ -296,7 +296,7 @@ export default function Home() {
               {faqs.map((faq, index) => (
                 <article
                   key={faq.question}
-                  className="card-lift stagger-item rounded-2xl border border-stone-200 bg-indigo-50/60 p-5"
+                  className="card-lift stagger-item rounded-2xl border border-indigo-200/80 bg-indigo-100/70 p-5"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <h3 className="text-base font-semibold tracking-tight text-stone-900">{faq.question}</h3>
