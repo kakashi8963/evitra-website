@@ -37,6 +37,11 @@ section {
   display: inline-block;
 }
 
+.hero-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .hero-letter {
   display: inline-block;
   color: #1c1917;

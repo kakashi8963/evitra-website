@@ -69,6 +69,7 @@ const faqs = [
 ];
 
 const heroHeadline = "Build, rank, and scale your business online.";
+const heroHeadlineWords = heroHeadline.split(" ");
 
 const services = [
   {
@@ -143,15 +144,25 @@ export default function Home() {
               className="max-w-xl text-4xl font-semibold tracking-tight text-stone-950 sm:text-5xl lg:text-6xl"
             >
               <span aria-hidden="true" className="hero-lettering">
-                {Array.from(heroHeadline).map((char, index) => (
-                  <span
-                    key={`${char}-${index}`}
-                    className="hero-letter"
-                    style={{ animationDelay: `${index * 0.06}s` }}
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </span>
-                ))}
+                {heroHeadlineWords.map((word, wordIndex) => {
+                  const startIndex =
+                    heroHeadlineWords.slice(0, wordIndex).join("").length + wordIndex;
+
+                  return (
+                    <span key={`${word}-${wordIndex}`} className="hero-word">
+                      {Array.from(word).map((char, charIndex) => (
+                        <span
+                          key={`${char}-${wordIndex}-${charIndex}`}
+                          className="hero-letter"
+                          style={{ animationDelay: `${(startIndex + charIndex) * 0.06}s` }}
+                        >
+                          {char}
+                        </span>
+                      ))}
+                      {wordIndex < heroHeadlineWords.length - 1 ? "\u00A0" : ""}
+                    </span>
+                  );
+                })}
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-stone-700">
@@ -174,9 +185,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="card-lift relative z-10 rounded-2xl border border-stone-200/90 bg-stone-200/70 p-8 shadow-sm animate-fade-up-delayed">
-            <h2 className="text-lg font-semibold tracking-tight">Why Evitra</h2>
-            <ul className="mt-6 space-y-5 text-stone-700">
+          <div className="card-lift relative z-10 rounded-2xl border border-indigo-800/80 bg-indigo-950 p-8 shadow-lg shadow-indigo-900/30 animate-fade-up-delayed">
+            <h2 className="text-lg font-semibold tracking-tight text-white">Why Evitra</h2>
+            <ul className="mt-6 space-y-5 text-indigo-100">
               <li>Strategy-first execution focused on business KPIs.</li>
               <li>Full-funnel approach from discovery to conversion.</li>
               <li>Clear reporting and continuous optimization.</li>
