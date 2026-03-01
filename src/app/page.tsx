@@ -70,9 +70,20 @@ export default function Home() {
             />
             <p className="text-base font-semibold tracking-tight">Evitra Digital</p>
           </div>
+          <nav className="hidden items-center gap-6 md:flex">
+            <a href="#services" className="text-sm font-medium text-stone-600 transition hover:text-stone-900">Services</a>
+            <a href="#process" className="text-sm font-medium text-stone-600 transition hover:text-stone-900">Process</a>
+            <a href="#testimonials" className="text-sm font-medium text-stone-600 transition hover:text-stone-900">Success Stories</a>
+            <a
+              href="#contact"
+              className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium transition hover:bg-stone-100"
+            >
+              Book a Call
+            </a>
+          </nav>
           <a
             href="#contact"
-            className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium transition hover:bg-stone-100"
+            className="rounded-full border border-stone-300 px-4 py-2 text-sm font-medium transition hover:bg-stone-100 md:hidden"
           >
             Book a Call
           </a>
@@ -143,7 +154,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
+        <section id="process" className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
           <div className="rounded-3xl border border-stone-200 bg-white p-8 sm:p-10">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               Simple process, serious results
@@ -168,7 +179,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
+        <section id="testimonials" className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
           <div className="max-w-2xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-stone-600">
               Customer Success Stories
