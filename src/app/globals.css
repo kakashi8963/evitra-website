@@ -33,6 +33,15 @@ section {
   color: transparent;
 }
 
+.hero-lettering {
+  display: inline-block;
+}
+
+.hero-letter {
+  display: inline-block;
+  color: #1c1917;
+}
+
 .hero-orb {
   position: absolute;
   width: 14rem;
@@ -62,6 +71,31 @@ section {
 
 .animated-gradient {
   background-size: 180% 180%;
+}
+
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    rgb(255 255 255 / 0),
+    rgb(255 255 255 / 0.35),
+    rgb(255 255 255 / 0)
+  );
+  transform: skewX(-22deg);
+}
+
+.section-title-pop {
+  position: relative;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -96,6 +130,41 @@ section {
     }
   }
 
+  @keyframes letterHighlight {
+    0%,
+    16%,
+    100% {
+      color: #1c1917;
+      text-shadow: 0 0 0 rgb(59 130 246 / 0);
+      transform: translateY(0);
+    }
+    24%,
+    44% {
+      color: #1d4ed8;
+      text-shadow: 0 0 18px rgb(56 189 248 / 0.45);
+      transform: translateY(-2px);
+    }
+  }
+
+  @keyframes titleEmphasis {
+    0%,
+    100% {
+      text-shadow: 0 0 0 rgb(79 70 229 / 0);
+    }
+    50% {
+      text-shadow: 0 4px 16px rgb(79 70 229 / 0.18);
+    }
+  }
+
+  @keyframes shimmerSweep {
+    0% {
+      left: -130%;
+    }
+    100% {
+      left: 150%;
+    }
+  }
+
   @keyframes gradientShift {
     0% {
       background-position: 0% 50%;
@@ -122,6 +191,18 @@ section {
 
   .pulse-glow {
     animation: pulseGlow 2.2s ease-in-out infinite;
+  }
+
+  .hero-letter {
+    animation: letterHighlight 3.4s ease-in-out infinite;
+  }
+
+  .section-title-pop {
+    animation: titleEmphasis 4.2s ease-in-out infinite;
+  }
+
+  .shimmer-btn::after {
+    animation: shimmerSweep 2.8s ease-in-out infinite;
   }
 
   .section-reveal,

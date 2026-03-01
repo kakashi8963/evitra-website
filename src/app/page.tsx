@@ -68,6 +68,8 @@ const faqs = [
   },
 ];
 
+const heroHeadline = "Build, rank, and scale your business online.";
+
 const services = [
   {
     title: "Website Design & Development",
@@ -136,8 +138,21 @@ export default function Home() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-indigo-700">
               Digital Growth Partner
             </p>
-            <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-stone-950 sm:text-5xl lg:text-6xl">
-              Build, rank, and <span className="gradient-text">scale your business online.</span>
+            <h1
+              aria-label={heroHeadline}
+              className="max-w-xl text-4xl font-semibold tracking-tight text-stone-950 sm:text-5xl lg:text-6xl"
+            >
+              <span aria-hidden="true" className="hero-lettering">
+                {Array.from(heroHeadline).map((char, index) => (
+                  <span
+                    key={`${char}-${index}`}
+                    className="hero-letter"
+                    style={{ animationDelay: `${index * 0.06}s` }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+              </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-stone-700">
               Evitra Digital helps brands grow with websites, SEO, content, and
@@ -146,13 +161,13 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#services"
-                className="pulse-glow rounded-full bg-gradient-to-r from-indigo-700 to-sky-600 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:from-indigo-600 hover:to-sky-500"
+                className="pulse-glow shimmer-btn rounded-full bg-gradient-to-r from-indigo-700 to-sky-600 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:from-indigo-600 hover:to-sky-500"
               >
                 Explore Services
               </a>
               <a
                 href="#contact"
-                className="rounded-full border border-stone-300 bg-white/80 px-6 py-3 text-sm font-semibold transition hover:-translate-y-0.5 hover:bg-stone-100"
+                className="shimmer-btn rounded-full border border-stone-300 bg-white/80 px-6 py-3 text-sm font-semibold transition hover:-translate-y-0.5 hover:bg-stone-100"
               >
                 Start a Project
               </a>
@@ -175,7 +190,7 @@ export default function Home() {
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-indigo-700">
               Real Impact
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="section-title-pop text-3xl font-semibold tracking-tight sm:text-4xl">
               Outcomes we optimize for
             </h2>
           </div>
@@ -195,7 +210,7 @@ export default function Home() {
 
         <section id="services" className="section-reveal mx-auto w-full max-w-6xl px-6 py-8 lg:px-8 lg:py-12">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="section-title-pop text-3xl font-semibold tracking-tight sm:text-4xl">
               Services that move metrics
             </h2>
             <p className="mt-4 text-lg leading-8 text-stone-700">
@@ -220,7 +235,7 @@ export default function Home() {
 
         <section id="process" className="section-reveal mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
           <div className="rounded-3xl border border-indigo-100 bg-gradient-to-br from-white to-indigo-50/50 p-8 sm:p-10">
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="section-title-pop text-3xl font-semibold tracking-tight sm:text-4xl">
               Simple process, serious results
             </h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
@@ -248,7 +263,7 @@ export default function Home() {
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-indigo-700">
               Customer Success Stories
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="section-title-pop text-3xl font-semibold tracking-tight sm:text-4xl">
               Trusted by growing brands
             </h2>
             <p className="mt-4 text-lg leading-8 text-stone-700">
@@ -288,7 +303,7 @@ export default function Home() {
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-indigo-700">
                 Frequently Asked Questions
               </p>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              <h2 className="section-title-pop text-3xl font-semibold tracking-tight sm:text-4xl">
                 Everything you need to know
               </h2>
             </div>
@@ -309,7 +324,7 @@ export default function Home() {
 
         <section id="contact" className="section-reveal mx-auto w-full max-w-6xl px-6 pb-24 lg:px-8">
           <div className="animated-gradient rounded-3xl bg-gradient-to-r from-stone-900 via-indigo-900 to-sky-900 px-8 py-12 text-white sm:px-10">
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="section-title-pop text-3xl font-semibold tracking-tight sm:text-4xl">
               Ready to grow with Evitra Digital?
             </h2>
             <p className="mt-4 max-w-2xl text-stone-200">
