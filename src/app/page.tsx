@@ -31,6 +31,43 @@ const testimonials = [
   },
 ];
 
+const impactStats = [
+  {
+    value: "+180%",
+    label: "Average organic traffic growth",
+  },
+  {
+    value: "3.1x",
+    label: "Average ROAS on paid campaigns",
+  },
+  {
+    value: "42%",
+    label: "Increase in lead conversion rate",
+  },
+  {
+    value: "< 21 days",
+    label: "Typical website launch timeline",
+  },
+];
+
+const faqs = [
+  {
+    question: "How quickly can we start?",
+    answer:
+      "Most projects begin within a week after our strategy call and scope finalization.",
+  },
+  {
+    question: "Do you offer complete digital execution?",
+    answer:
+      "Yes. We handle website, SEO, content, and ads as one integrated growth system.",
+  },
+  {
+    question: "Will we get regular performance updates?",
+    answer:
+      "Absolutely. You get clear reporting with insights, priorities, and next actions every cycle.",
+  },
+];
+
 const services = [
   {
     title: "Website Design & Development",
@@ -72,6 +109,7 @@ export default function Home() {
           </div>
           <nav className="hidden items-center gap-6 md:flex">
             <a href="#services" className="text-sm font-medium text-stone-600 transition hover:text-indigo-700">Services</a>
+            <a href="#results" className="text-sm font-medium text-stone-600 transition hover:text-indigo-700">Results</a>
             <a href="#process" className="text-sm font-medium text-stone-600 transition hover:text-indigo-700">Process</a>
             <a href="#testimonials" className="text-sm font-medium text-stone-600 transition hover:text-indigo-700">Success Stories</a>
             <a
@@ -91,7 +129,7 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="relative mx-auto grid w-full max-w-6xl gap-12 overflow-hidden px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-28">
+        <section className="section-reveal relative mx-auto grid w-full max-w-6xl gap-12 overflow-hidden px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-28">
           <div className="hero-orb -right-20 -top-24 hidden sm:block" />
           <div className="hero-orb -left-16 bottom-0 hidden bg-amber-200/45 sm:block" />
           <div className="relative z-10 animate-fade-up">
@@ -132,7 +170,30 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="services" className="mx-auto w-full max-w-6xl px-6 py-8 lg:px-8 lg:py-12">
+        <section id="results" className="section-reveal mx-auto w-full max-w-6xl px-6 py-8 lg:px-8 lg:py-12">
+          <div className="mb-8 max-w-2xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-indigo-700">
+              Real Impact
+            </p>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Outcomes we optimize for
+            </h2>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {impactStats.map((stat, index) => (
+              <article
+                key={stat.label}
+                className="card-lift stagger-item rounded-2xl border border-indigo-100 bg-white/90 p-6"
+                style={{ animationDelay: `${index * 90}ms` }}
+              >
+                <p className="text-3xl font-semibold tracking-tight text-indigo-700">{stat.value}</p>
+                <p className="mt-2 text-sm leading-6 text-stone-700">{stat.label}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="services" className="section-reveal mx-auto w-full max-w-6xl px-6 py-8 lg:px-8 lg:py-12">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               Services that move metrics
@@ -142,10 +203,11 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
-            {services.map((service) => (
+            {services.map((service, index) => (
               <article
                 key={service.title}
-                className="card-lift rounded-2xl border border-stone-200 bg-white/90 p-6"
+                className="card-lift stagger-item rounded-2xl border border-stone-200 bg-white/90 p-6"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <h3 className="text-xl font-semibold tracking-tight text-stone-900">
                   {service.title}
@@ -156,23 +218,23 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="process" className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
+        <section id="process" className="section-reveal mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
           <div className="rounded-3xl border border-indigo-100 bg-gradient-to-br from-white to-indigo-50/50 p-8 sm:p-10">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               Simple process, serious results
             </h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
-              <div>
+              <div className="card-lift rounded-2xl border border-transparent p-4 transition hover:border-indigo-100 hover:bg-white/70">
                 <p className="text-sm font-semibold text-stone-500">Step 01</p>
                 <p className="mt-2 text-lg font-semibold">Audit & Strategy</p>
                 <p className="mt-2 text-stone-700">We map your goals, funnel, and opportunities.</p>
               </div>
-              <div>
+              <div className="card-lift rounded-2xl border border-transparent p-4 transition hover:border-indigo-100 hover:bg-white/70">
                 <p className="text-sm font-semibold text-stone-500">Step 02</p>
                 <p className="mt-2 text-lg font-semibold">Build & Launch</p>
                 <p className="mt-2 text-stone-700">Execution across web, SEO, content, and ads.</p>
               </div>
-              <div>
+              <div className="card-lift rounded-2xl border border-transparent p-4 transition hover:border-indigo-100 hover:bg-white/70">
                 <p className="text-sm font-semibold text-stone-500">Step 03</p>
                 <p className="mt-2 text-lg font-semibold">Optimize & Scale</p>
                 <p className="mt-2 text-stone-700">Continuous improvement backed by real data.</p>
@@ -181,7 +243,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="testimonials" className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
+        <section id="testimonials" className="section-reveal mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
           <div className="max-w-2xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-indigo-700">
               Customer Success Stories
@@ -194,10 +256,11 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
-            {testimonials.map((t) => (
+            {testimonials.map((t, index) => (
               <blockquote
                 key={t.name}
-                className="card-lift flex flex-col justify-between rounded-2xl border border-stone-200 bg-white/95 p-6"
+                className="card-lift stagger-item flex flex-col justify-between rounded-2xl border border-stone-200 bg-white/95 p-6"
+                style={{ animationDelay: `${index * 120}ms` }}
               >
                 <p className="leading-7 text-stone-700">&ldquo;{t.quote}&rdquo;</p>
                 <footer className="mt-5 flex items-center justify-between">
@@ -219,8 +282,33 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="mx-auto w-full max-w-6xl px-6 pb-24 lg:px-8">
-          <div className="rounded-3xl bg-gradient-to-r from-stone-900 via-indigo-900 to-sky-900 px-8 py-12 text-white sm:px-10">
+        <section className="section-reveal mx-auto w-full max-w-6xl px-6 py-6 lg:px-8 lg:py-10">
+          <div className="rounded-3xl border border-stone-200 bg-white/85 p-8 sm:p-10">
+            <div className="max-w-2xl">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-indigo-700">
+                Frequently Asked Questions
+              </p>
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                Everything you need to know
+              </h2>
+            </div>
+            <div className="mt-8 grid gap-5 sm:grid-cols-3">
+              {faqs.map((faq, index) => (
+                <article
+                  key={faq.question}
+                  className="card-lift stagger-item rounded-2xl border border-stone-200 bg-white p-5"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <h3 className="text-base font-semibold tracking-tight text-stone-900">{faq.question}</h3>
+                  <p className="mt-3 text-sm leading-7 text-stone-700">{faq.answer}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="section-reveal mx-auto w-full max-w-6xl px-6 pb-24 lg:px-8">
+          <div className="animated-gradient rounded-3xl bg-gradient-to-r from-stone-900 via-indigo-900 to-sky-900 px-8 py-12 text-white sm:px-10">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               Ready to grow with Evitra Digital?
             </h2>

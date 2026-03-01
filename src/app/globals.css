@@ -22,6 +22,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section {
+  scroll-margin-top: 84px;
+}
+
 .gradient-text {
   background-image: linear-gradient(to right, #4338ca, #0284c7);
   -webkit-background-clip: text;
@@ -46,6 +50,18 @@ html {
   transform: translateY(-6px);
   box-shadow: 0 14px 34px rgb(15 23 42 / 0.08);
   border-color: rgb(186 230 253);
+}
+
+.section-reveal {
+  opacity: 1;
+}
+
+.stagger-item {
+  opacity: 1;
+}
+
+.animated-gradient {
+  background-size: 180% 180%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -80,6 +96,18 @@ html {
     }
   }
 
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   .animate-fade-up {
     animation: fadeUp 700ms ease both;
   }
@@ -94,5 +122,14 @@ html {
 
   .pulse-glow {
     animation: pulseGlow 2.8s ease-in-out infinite;
+  }
+
+  .section-reveal,
+  .stagger-item {
+    animation: fadeUp 700ms ease both;
+  }
+
+  .animated-gradient {
+    animation: gradientShift 9s ease infinite;
   }
 }
