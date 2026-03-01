@@ -1,5 +1,36 @@
 import Image from "next/image";
 
+const testimonials = [
+  {
+    quote:
+      "Evitra Digital completely transformed our online presence. Our patient inquiries doubled within three months of launching the new site.",
+    name: "Navya Agarwal",
+    role: "Founder, ECPW Healthcare",
+    url: "https://ecpw-healthcare.com/",
+  },
+  {
+    quote:
+      "From SEO to ad campaigns, the Evitra team delivered measurable results at every step. They truly understand how to drive leads for a renovation business.",
+    name: "Mark Wyatt",
+    role: "Founder, DNB Renovations",
+    url: "https://dnbrenovations.com/interior-design",
+  },
+  {
+    quote:
+      "Working with Evitra felt like having an in-house digital team. Our content strategy now brings in consistent foot traffic and online orders.",
+    name: "Jessica Bream",
+    role: "Founder, Cafe Landwer",
+    url: "https://www.landwer.ca/",
+  },
+  {
+    quote:
+      "Evitra's performance ads cut our cost per lead in half. Their data-driven approach is exactly what we needed to scale across Australia.",
+    name: "Mitch Langer",
+    role: "Founder, Alliance Pest Control",
+    url: "https://alliancepestsolutions.com.au/",
+  },
+];
+
 const services = [
   {
     title: "Website Design & Development",
@@ -134,6 +165,44 @@ export default function Home() {
                 <p className="mt-2 text-stone-700">Continuous improvement backed by real data.</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-stone-600">
+              Customer Success Stories
+            </p>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Trusted by growing brands
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-stone-700">
+              Hear from the founders we&apos;ve helped scale.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {testimonials.map((t) => (
+              <blockquote
+                key={t.name}
+                className="flex flex-col justify-between rounded-2xl border border-stone-200 bg-white p-6"
+              >
+                <p className="leading-7 text-stone-700">&ldquo;{t.quote}&rdquo;</p>
+                <footer className="mt-5 flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-stone-900">{t.name}</p>
+                    <p className="text-sm text-stone-500">{t.role}</p>
+                  </div>
+                  <a
+                    href={t.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-stone-600 underline decoration-stone-300 underline-offset-2 transition hover:text-stone-900"
+                  >
+                    Visit site &rarr;
+                  </a>
+                </footer>
+              </blockquote>
+            ))}
           </div>
         </section>
 
